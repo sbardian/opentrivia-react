@@ -4,7 +4,7 @@
 
 import { React } from 'react';
 
-class openTrivia extends React.Component {
+export default class openTrivia extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -17,7 +17,7 @@ class openTrivia extends React.Component {
   }
 
   componentWillUnmount () {
-    // When component mounts
+    // When component mount
   }
 
   render () {
@@ -38,5 +38,3 @@ openTrivia.defaultProps = {
   // set value of default props
   test: 'test',
 };
-
-export default openTrivia;
