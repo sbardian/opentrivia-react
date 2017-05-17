@@ -2,10 +2,10 @@
   "name": "opentrivia-react",
   "version": "0.0.5",
   "description": "React component for openTriviaAPI",
-  "main": "dist/index_bundle.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "Please create test script.",
-    "prod": "webpack"
+    "prod": "babel app --out-dir lib"
   },
   "repository": {
     "type": "git",
@@ -22,16 +22,17 @@
   },
   "homepage": "https://github.com/sbardian/opentrivia-react#readme",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "webpack": "^2.5.1",
-    "webpack-dev-server": "^2.4.5"
+    "react-dom": "^15.5.4"
   },
   "dependencies": {
-    "opentriviaapi": "0.0.8"
+    "opentriviaapi": "0.0.8",
+    "prop-types": "^15.5.10"
   }
 }

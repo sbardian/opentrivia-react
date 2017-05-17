@@ -2,7 +2,7 @@
 # Created by https://www.gitignore.io/api/node,webstorm
 
 # Production
-dist/
+lib/
 
 ### Node ###
 # Logs
