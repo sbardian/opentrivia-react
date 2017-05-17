@@ -13,11 +13,11 @@ class openTrivia extends react.Component {
   }
 
   componentWillReceiveProps (newProps) {
-
+    // When component gets props
   }
 
   componentWillUnmount () {
-
+    // When component mounts
   }
 
   render () {
