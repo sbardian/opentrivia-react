@@ -1,8 +1,8 @@
 {
   "name": "opentrivia-react",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "React component for openTriviaAPI",
-  "main": "app/index.js",
+  "main": "dist/index_bundle.js",
   "scripts": {
     "test": "Please create test script.",
     "prod": "webpack"
@@ -26,7 +26,6 @@
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "html-webpack-plugin": "^2.28.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "webpack": "^2.5.1",
