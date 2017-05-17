@@ -2,9 +2,9 @@
  * Created by sbardian on 5/16/17.
  */
 
-import react from 'react';
+import { React } from 'react';
 
-class openTrivia extends react.Component {
+class openTrivia extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
