@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "nyc --reporter=text --reporter=lcov mocha --require babel-register",
-    "lint": "eslint src test || exit 0",
+    "lint": "eslint app || exit 0",
     "prod": "babel app --out-dir lib",
     "prepublish": "babel app --out-dir lib",
     "publish": "npm publish"
@@ -37,6 +37,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
+    "mocha": "^3.4.1",
     "nyc": "^10.3.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
