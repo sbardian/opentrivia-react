@@ -1,6 +1,6 @@
 {
   "name": "opentrivia-react",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React component for openTriviaAPI",
   "main": "app/index.js",
   "scripts": {
