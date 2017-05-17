@@ -4,7 +4,7 @@
   "description": "React component for openTriviaAPI",
   "main": "lib/index.js",
   "scripts": {
-    "test": "Please create test script.",
+    "test": "nyc --reporter=text --reporter=lcov mocha --require babel-register",
     "lint": "eslint src test || exit 0",
     "prod": "babel app --out-dir lib",
     "prepublish": "babel app --out-dir lib",
