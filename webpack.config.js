@@ -3,12 +3,6 @@
  */
 
 let webpack = require('webpack');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
-let HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: __dirname + '/app/index.html',
-  filename: 'index.html',
-  inject: 'body'
-});
 
 module.exports = {
   entry: [
@@ -27,9 +21,5 @@ module.exports = {
         query: { compact: false }
       }
     ]
-  },
-  plugins: [
-    HtmlWebpackPluginConfig,
-    new webpack.EnvironmentPlugin(['DebtTrackerAPI'])
-  ]
+  }
 };
