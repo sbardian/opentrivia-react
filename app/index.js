@@ -5,19 +5,54 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// TODO: most likely will split each of these off into their own component.
+
+class MultipleQuestionChoice extends React.Component {
+  render () {
+    // TODO: foreach over choices returning group of <li>'s
+    return (
+        <li>
+
+        </li>
+    )
+  }
+}
+
+class MultipleQuestionWrapper extends React.Component {
+  render () {
+    // TODO: take props and render cat / question and pass props.choices to MQC
+    return (
+      <div>
+
+      </div>
+    )
+  }
+}
+
+class BooleanQuestion extends React.Component {
+  render () {
+    // TODO: take props and render true false question
+    return (
+        <li>
+
+        </li>
+    )
+  }
+}
+
 export default class openTrivia extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      statetest: 'test',
+      loading: true,
     }
   }
 
   render () {
+    // TODO: foreach question, if multi or bool call multi wrapper or bool question
     return (
         <div>
-          <div>This is a state {this.state.statetest}</div>
-          <div>This is a props {this.props.proptest}</div>
+
         </div>
     )
   }
@@ -25,10 +60,10 @@ export default class openTrivia extends React.Component {
 
 openTrivia.propTypes = {
   // set default props the component will expect
-  proptest: PropTypes.string
+  loading: PropTypes.bool
 };
 
 openTrivia.defaultProps = {
   // set value of default props
-  proptest: 'test',
+  loading: true,
 };
