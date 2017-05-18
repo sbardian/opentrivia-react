@@ -4,41 +4,9 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-
-// TODO: most likely will split each of these off into their own component.
-
-class MultipleQuestionChoice extends React.Component {
-  render () {
-    // TODO: foreach over choices returning group of <li>'s
-    return (
-        <li>
-
-        </li>
-    )
-  }
-}
-
-class MultipleQuestionWrapper extends React.Component {
-  render () {
-    // TODO: take props and render cat / question and pass props.choices to MQC
-    return (
-      <div>
-
-      </div>
-    )
-  }
-}
-
-class BooleanQuestion extends React.Component {
-  render () {
-    // TODO: take props and render true false question
-    return (
-        <li>
-
-        </li>
-    )
-  }
-}
+import BooleanQuestion from 'components/BooleanQuestion';
+import MultipleQuestionWrapper from 'components/MultipleQuestionWrapper';
+import MultipleQuestionChoice from 'components/MultipleQuestionChoice';
 
 export default class openTrivia extends React.Component {
   constructor (props) {
