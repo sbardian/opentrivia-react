@@ -3,7 +3,6 @@
  */
 
 const openTriviaAPI = require('opentriviaapi');
-//import openTriviaAPI from 'opentriviaapi';
 
 const utils = {
   getToken() {
