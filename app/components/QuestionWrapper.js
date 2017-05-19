@@ -4,23 +4,53 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactCardFlip from 'react-card-flip';
+import styles from '../../styles/styles';
 
 export default class QuestionWrapper extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
       loading: this.props.loading,
+      isFlipped: false,
     }
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    this.setState({ isFlipped: !this.state.isFlipped });
   }
 
   render () {
-    // TODO: take props and render cat / question and pass props.choices to Choices
     // make use of react-native-flip-card
+    let x = 1;
     return (
-        <div>
-          <h1>{this.props.question.category}</h1>
-          <h2>{decodeURI(this.props.question.question)}</h2>
-          <div>Call to -Choices-</div>
+        <div style={styles.example}>
+          <ReactCardFlip isFlipped={this.state.isFlipped}>
+            <div key="front" style={styles.card}>
+              <h3>{this.props.question.category}</h3>
+              <h3>{decodeURIComponent(this.props.question.question)}</h3>
+              <ul>
+                {
+                  // TODO: Call to CHOICES passing correct and incorrect.
+                  this.props.question.incorrect_answers.map((ans) => {
+                  x++;
+                  return (
+                      <li key={x}><h4>{decodeURIComponent(ans)}</h4></li>
+                  )
+                })}
+                <li key="0"><h4>{decodeURIComponent(this.props.question.correct_answer)}</h4></li>
+              </ul>
+              <button onClick={this.handleClick}>Answer</button>
+            </div>
+
+            <div key="back" style={styles.card}>
+              <h3>Correct Answer:</h3>
+              <h3>{this.props.question.correct_answer}</h3>
+              <button onClick={this.handleClick}>Back</button>
+            </div>
+          </ReactCardFlip>
         </div>
     )
   }
