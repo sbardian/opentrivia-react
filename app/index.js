@@ -5,6 +5,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import utils from '../utils/utils';
+import QuestionWrapper from './components/QuestionWrapper';
 
 export default class OpenTrivia extends React.Component {
   constructor (props) {
@@ -57,9 +58,7 @@ export default class OpenTrivia extends React.Component {
     // TODO: foreach question, if multi or bool call multi wrapper or bool question
     return (
         <div>
-          <h1>{this.state.results[this.state.index].category}</h1>
-          <h2>{this.state.results[this.state.index].question}</h2>
-          <h2>Correct: {this.state.results[this.state.index].correct_answer}</h2>
+          <QuestionWrapper results={this.state.results} index={this.state.index} />
         </div>
     )
   }
