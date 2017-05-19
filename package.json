@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "opentriviaapi": "0.0.8",
-    "prop-types": "^15.5.10"
+    "prop-types": "^15.5.10",
+    "react-card-flip": "0.0.4"
   }
 }
