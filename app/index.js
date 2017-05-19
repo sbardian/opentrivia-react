@@ -49,7 +49,7 @@ export default class OpenTrivia extends React.Component {
     utils.getQuestions(options)
         .then((results) => {
           console.log('index results ', results);
-          this.setState({ results })
+          this.setState({ results });
         });
   }
 
