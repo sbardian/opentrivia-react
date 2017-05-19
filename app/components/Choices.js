@@ -6,7 +6,7 @@ import React from 'react';
 
 export default class Choices extends React.Component {
   render () {
-    // TODO: foreach over choices returning group of <li>'s
+    // TODO: foreach over correct and incorrect answers returning group of <li>'s
     return (
         <li>
 
