@@ -48,7 +48,6 @@ export default class OpenTrivia extends React.Component {
     }
     utils.getQuestions(options)
         .then((results) => {
-          console.log('index results ', results);
           this.setState({
             results,
             loading: false,
@@ -57,9 +56,8 @@ export default class OpenTrivia extends React.Component {
   }
 
   render () {
-    // TODO: foreach question, if multi or bool call multi wrapper or bool question
     return this.state.loading === true
-        ? <p><h1>Loading Question. . .</h1></p>
+        ? <div><h1>Loading Question. . .</h1></div>
         : <div>
             <QuestionWrapper question={this.state.results[this.state.index]} loading={this.state.loading} />
           </div>
