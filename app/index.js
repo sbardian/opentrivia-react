@@ -58,7 +58,7 @@ export default class OpenTrivia extends React.Component {
     // TODO: foreach question, if multi or bool call multi wrapper or bool question
     return (
         <div>
-          <QuestionWrapper results={this.state.results} index={this.state.index} />
+          <QuestionWrapper question={this.state.results[this.state.index]} loading={this.state.loading} />
         </div>
     )
   }

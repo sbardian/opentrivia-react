@@ -9,9 +9,7 @@ export default class QuestionWrapper extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      loading: true,
-      results: [{}],
-      index: 0,
+      loading: this.props.loading,
     }
   }
 
@@ -20,8 +18,8 @@ export default class QuestionWrapper extends React.Component {
     // make use of react-native-flip-card
     return (
         <div>
-          <h1>{this.props.results[this.state.index].category}</h1>
-          <h2>{decodeURI(this.props.results[this.state.index].question)}</h2>
+          <h1>{this.props.question.category}</h1>
+          <h2>{decodeURI(this.props.question.question)}</h2>
           <div>Call to -Choices-</div>
         </div>
     )
@@ -30,13 +28,11 @@ export default class QuestionWrapper extends React.Component {
 
 QuestionWrapper.propTypes = {
   loading: PropTypes.bool,
-  results: PropTypes.array,
-  index: PropTypes.number,
+  question: PropTypes.object,
 }
 
 QuestionWrapper.defaultProps = {
   // set value of default props
   loading: true,
-  results: [{}],
-  index: 0,
+  question: {},
 };
