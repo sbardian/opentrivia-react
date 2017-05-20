@@ -6,12 +6,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactCardFlip from 'react-card-flip';
 import styles from '../../styles/styles';
+import Choices from './Choices';
 
 export default class QuestionWrapper extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      loading: this.props.loading,
       isFlipped: false,
     }
     this.handleClick = this.handleClick.bind(this);
@@ -23,7 +23,6 @@ export default class QuestionWrapper extends React.Component {
   }
 
   render () {
-    let x = 1;
     return (
         <div style={styles.example}>
           {/* TODO: remove br's after testing */}
@@ -32,17 +31,9 @@ export default class QuestionWrapper extends React.Component {
             <div key="front" style={styles.card}>
               <h3>{this.props.question.category}</h3>
               <h3>{decodeURIComponent(this.props.question.question)}</h3>
-              <ul>
-                {
-                  // TODO: Call to CHOICES passing correct and incorrect.
-                  this.props.question.incorrect_answers.map((ans) => {
-                  x++;
-                  return (
-                      <li key={x}><h4>{decodeURIComponent(ans)}</h4></li>
-                  )
-                })}
-                <li key="0"><h4>{decodeURIComponent(this.props.question.correct_answer)}</h4></li>
-              </ul>
+
+              <Choices question={this.props.question} ></Choices>
+
               <button onClick={this.handleClick}>Answer</button>
             </div>
 
@@ -58,11 +49,9 @@ export default class QuestionWrapper extends React.Component {
 }
 
 QuestionWrapper.propTypes = {
-  loading: PropTypes.bool,
   question: PropTypes.object,
 }
 
 QuestionWrapper.defaultProps = {
-  loading: true,
   question: {},
 };
