@@ -23,7 +23,7 @@ export default class OpenTrivia extends React.Component {
   nextQuestion () {
     console.log('NEXT');
     let i = this.state.index;
-    if (i < this.props.amount) {
+    if (i < (this.props.amount - 1)) {
       i++;
     }
     this.setState({
@@ -73,6 +73,7 @@ export default class OpenTrivia extends React.Component {
     return this.state.loading === true
         ? <div><h1>Loading Question. . .</h1></div>
         : <div>
+          <h4>{(this.state.index + 1)} / {this.props.amount}</h4>
           <div><button onClick={this.nextQuestion}>Next</button></div>
           <div><button onClick={this.prevQuestion}>Prev</button></div>
             <QuestionWrapper question={this.state.results[this.state.index]} loading={this.state.loading} />
@@ -81,7 +82,6 @@ export default class OpenTrivia extends React.Component {
 }
 
 OpenTrivia.propTypes = {
-  // set default props the component will expect
   loading: PropTypes.bool,
   amount: PropTypes.number,
   category: PropTypes.number,
@@ -92,7 +92,6 @@ OpenTrivia.propTypes = {
 };
 
 OpenTrivia.defaultProps = {
-  // set value of default props
   loading: true,
   results: [{}],
 };
