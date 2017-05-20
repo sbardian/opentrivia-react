@@ -27,6 +27,8 @@ export default class QuestionWrapper extends React.Component {
     let x = 1;
     return (
         <div style={styles.example}>
+          {/* TODO: remove br's after testing */}
+          <br/><br />
           <ReactCardFlip isFlipped={this.state.isFlipped}>
             <div key="front" style={styles.card}>
               <h3>{this.props.question.category}</h3>
