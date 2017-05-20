@@ -13,20 +13,33 @@ export default class OpenTrivia extends React.Component {
     this.state = {
       loading: true,
       results: [{}],
+      token: null,
       index: 0,
     }
+    this.nextQuestion = this.nextQuestion.bind(this);
+    this.prevQuestion = this.prevQuestion.bind(this);
   }
 
   nextQuestion () {
+    console.log('NEXT');
+    let i = this.state.index;
+    if (i < this.props.amount) {
+      i++;
+    }
     this.setState({
-      index: this.state.index++
-    })
+      index: i
+    });
   }
 
   prevQuestion () {
+    console.log('PREV');
+    let i = this.state.index;
+    if (i > 0) {
+      i--;
+    }
     this.setState({
-      index: this.state.index--
-    })
+      index: i
+    });
   }
 
   componentWillMount () {
@@ -51,6 +64,7 @@ export default class OpenTrivia extends React.Component {
           this.setState({
             results,
             loading: false,
+            token: results.token,
           });
         });
   }
@@ -59,6 +73,8 @@ export default class OpenTrivia extends React.Component {
     return this.state.loading === true
         ? <div><h1>Loading Question. . .</h1></div>
         : <div>
+          <div><button onClick={this.nextQuestion}>Next</button></div>
+          <div><button onClick={this.prevQuestion}>Prev</button></div>
             <QuestionWrapper question={this.state.results[this.state.index]} loading={this.state.loading} />
           </div>
   }
