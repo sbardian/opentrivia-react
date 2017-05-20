@@ -23,7 +23,6 @@ export default class QuestionWrapper extends React.Component {
   }
 
   render () {
-    // make use of react-native-flip-card
     let x = 1;
     return (
         <div style={styles.example}>
@@ -64,7 +63,6 @@ QuestionWrapper.propTypes = {
 }
 
 QuestionWrapper.defaultProps = {
-  // set value of default props
   loading: true,
   question: {},
 };
