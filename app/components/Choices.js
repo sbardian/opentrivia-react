@@ -9,8 +9,8 @@ export default class Choices extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      question: this.props.question,
-      answers: [],
+      correct_answer: this.props.correct_answer,
+      incorrect_answers: this.props.incorrect_answers,
     }
   }
 
@@ -23,27 +23,26 @@ export default class Choices extends React.Component {
     return a;
   }
 
-  componentWillMount () {
+  createAnswers () {
+    console.log('createAnswers');
     let answers = [];
-    this.state.question.incorrect_answers.map((ans) => {
+    this.props.incorrect_answers.map((ans) => {
       answers.push(ans);
     });
-    answers.push(this.state.question.correct_answer);
-    this.setState({
-      answers: this.shuffle(answers),
-    });
+    answers.push(this.props.correct_answer);
+    return answers = this.shuffle(answers);
   }
 
   render () {
-    let x = 0;
+    let answers = this.createAnswers();
+    console.log('render = ', answers);
     return (
         <ul>
           {
             // TODO: Call to CHOICES passing correct and incorrect.
-            this.state.answers.map((ans) => {
-              x++;
+            answers.map((ans) => {
               return (
-                  <li key={x}><h4>{decodeURIComponent(ans)}</h4></li>
+                  <li key={ans}><h4>{decodeURIComponent(ans)}</h4></li>
               )
             })
           }
@@ -53,9 +52,11 @@ export default class Choices extends React.Component {
 }
 
 Choices.propTypes = {
-  question: PropTypes.object,
+  correct_answer: PropTypes.string,
+  incorrect_answers: PropTypes.array,
 }
 
 Choices.defaultProps = {
-  question: {},
+  correct_answer: '',
+  incorrect_answers: [],
 };

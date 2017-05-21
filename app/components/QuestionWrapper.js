@@ -32,7 +32,7 @@ export default class QuestionWrapper extends React.Component {
               <h3>{this.props.question.category}</h3>
               <h3>{decodeURIComponent(this.props.question.question)}</h3>
 
-              <Choices question={this.props.question} ></Choices>
+              <Choices correct_answer={this.props.question.correct_answer} incorrect_answers={this.props.question.incorrect_answers} ></Choices>
 
               <button onClick={this.handleClick}>Answer</button>
             </div>
