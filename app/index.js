@@ -76,7 +76,7 @@ export default class OpenTrivia extends React.Component {
           <h4>{(this.state.index + 1)} / {this.props.amount}</h4>
           <div><button onClick={this.nextQuestion}>Next</button></div>
           <div><button onClick={this.prevQuestion}>Prev</button></div>
-            <QuestionWrapper question={this.state.results[this.state.index]} />
+          <QuestionWrapper question={this.state.results[this.state.index]} />
           </div>
   }
 }
