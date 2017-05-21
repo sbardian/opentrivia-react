@@ -8,10 +8,12 @@ var styles = {
     width: '400px'
   },
   card: {
-    border: '1px solid #eeeeee',
-    borderRadius: '3px',
+    border: '1px solid #666',
+    borderRadius: '7px',
     padding: '15px',
-    width: '400px'
+    width: '400px',
+    backgroundColor: 'lightcyan',
+    color: '#666',
   },
   image: {
     width: '250px'
