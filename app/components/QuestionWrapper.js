@@ -17,6 +17,7 @@ export default class QuestionWrapper extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
+  // Flips the card on click to reveal the answer
   handleClick(e) {
     e.preventDefault();
     this.setState({ isFlipped: !this.state.isFlipped });

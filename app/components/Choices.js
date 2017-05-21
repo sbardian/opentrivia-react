@@ -14,6 +14,7 @@ export default class Choices extends React.Component {
     }
   }
 
+  // Shuffles the answers array to displace the correct answer
   shuffle(a) {
     let j, x, i;
     for (let i = a.length; i; i--) {
@@ -23,6 +24,7 @@ export default class Choices extends React.Component {
     return a;
   }
 
+  // Combines the correct and incorrect answers into one array
   createAnswers () {
     console.log('createAnswers');
     let answers = [];

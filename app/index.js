@@ -20,6 +20,7 @@ export default class OpenTrivia extends React.Component {
     this.prevQuestion = this.prevQuestion.bind(this);
   }
 
+  // Moves forward to the next question
   nextQuestion () {
     console.log('NEXT');
     let i = this.state.index;
@@ -31,6 +32,7 @@ export default class OpenTrivia extends React.Component {
     });
   }
 
+  // Moves backwards to the previous question
   prevQuestion () {
     console.log('PREV');
     let i = this.state.index;
