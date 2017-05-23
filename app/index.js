@@ -61,14 +61,22 @@ export default class OpenTrivia extends React.Component {
       encode: encode,
       getToken: getToken,
     }
-    utils.getQuestions(options)
-        .then((results) => {
-          this.setState({
-            results,
-            loading: false,
-            token: results.token,
+    if(options.getToken && !this.state.token) {
+      utils.getToken()
+          .then((data) => {
+            this.setState({
+              token: data.token,
+            });
+            options.token = data.token;
+            utils.getQuestions(options)
+                .then((data) => {
+                  this.setState({
+                    results: data.results,
+                    loading: false,
+                  });
+                });
           });
-        });
+    }
   }
 
   render () {
