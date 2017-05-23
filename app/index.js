@@ -84,7 +84,6 @@ export default class OpenTrivia extends React.Component {
 }
 
 OpenTrivia.propTypes = {
-  loading: PropTypes.bool,
   amount: PropTypes.number,
   category: PropTypes.number,
   difficulty: PropTypes.string,
@@ -94,6 +93,5 @@ OpenTrivia.propTypes = {
 };
 
 OpenTrivia.defaultProps = {
-  loading: true,
   results: [{}],
 };
