@@ -76,6 +76,14 @@ export default class OpenTrivia extends React.Component {
                   });
                 });
           });
+    } else {
+      utils.getQuestions(options)
+          .then((data) => {
+              this.setState({
+                results: data.results,
+                loading: false,
+              });
+            });
     }
   }
 
