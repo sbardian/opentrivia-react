@@ -26,7 +26,6 @@ export default class Choices extends React.Component {
 
   // Combines the correct and incorrect answers into one array
   createAnswers () {
-    console.log('createAnswers');
     let answers = [];
     this.props.incorrect_answers.map((ans) => {
       answers.push(ans);
@@ -37,7 +36,6 @@ export default class Choices extends React.Component {
 
   render () {
     let answers = this.createAnswers();
-    console.log('render = ', answers);
     return (
         <ul>
           {
