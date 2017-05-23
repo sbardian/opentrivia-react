@@ -93,5 +93,6 @@ OpenTrivia.propTypes = {
 };
 
 OpenTrivia.defaultProps = {
+  amount: 1,
   results: [{}],
 };
