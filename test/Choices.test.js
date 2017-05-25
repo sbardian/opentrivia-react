@@ -10,7 +10,7 @@ import Choices from '../app/components/Choices';
 
 describe('Testing Choices...', () => {
   it('Should render a ul element', (done) => {
-    const wrapper = render(<Choices />);
+    const wrapper = shallow(<Choices />);
     expect(wrapper.find('ul')).to.have.length(1);
     done();
   });
