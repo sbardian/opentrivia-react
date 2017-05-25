@@ -18,9 +18,15 @@ export default class QuestionWrapper extends React.Component {
   }
 
   // Flips the card on click to reveal the answer
-  handleClick(e) {
+  handleClick (e) {
     e.preventDefault();
     this.setState({ isFlipped: !this.state.isFlipped });
+  }
+
+  htmlDecode (input) {
+    let e = document.createElement('div');
+    e.innerHTML = input;
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
   }
 
   render () {
@@ -31,10 +37,11 @@ export default class QuestionWrapper extends React.Component {
           <ReactCardFlip isFlipped={this.state.isFlipped}>
             <div key="front" style={styles.card}>
               <h3>{this.props.question.category}</h3>
-              <h3>{decodeURIComponent(this.props.question.question)}</h3>
-
-              <Choices correct_answer={this.props.question.correct_answer} incorrect_answers={this.props.question.incorrect_answers} ></Choices>
-
+              <h3>{this.htmlDecode(this.props.question.question)}</h3>
+              <Choices
+                  correct_answer={this.props.question.correct_answer}
+                  incorrect_answers={this.props.question.incorrect_answers} >
+              </Choices>
               <button onClick={this.handleClick}>Answer</button>
             </div>
 
