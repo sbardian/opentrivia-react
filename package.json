@@ -4,7 +4,7 @@
   "description": "React component for openTriviaAPI",
   "main": "lib/index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha --compilers js:babel-core/register \" ./test/*.test.js\"",
+    "test": "NODE_ENV=test mocha --require babel-register --require test/index.js",
     "lint": "eslint app || exit 0",
     "prod": "babel app --out-dir lib",
     "prepublish": "babel app --out-dir lib",
