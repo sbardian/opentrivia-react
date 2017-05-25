@@ -4,6 +4,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../../styles/styles';
 
 export default class Choices extends React.Component {
   constructor (props) {
@@ -37,7 +38,7 @@ export default class Choices extends React.Component {
   render () {
     let answers = this.createAnswers();
     return (
-        <ul>
+        <ul style={styles.cardList}>
           {
             // TODO: Call to CHOICES passing correct and incorrect.
             answers.map((ans) => {
