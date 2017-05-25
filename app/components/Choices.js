@@ -35,6 +35,12 @@ export default class Choices extends React.Component {
     return answers = this.shuffle(answers);
   }
 
+  htmlDecode (input) {
+    let e = document.createElement('div');
+    e.innerHTML = input;
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
+
   render () {
     let answers = this.createAnswers();
     return (
@@ -43,7 +49,7 @@ export default class Choices extends React.Component {
             // TODO: Call to CHOICES passing correct and incorrect.
             answers.map((ans) => {
               return (
-                  <li key={ans}><h4>{decodeURIComponent(ans)}</h4></li>
+                  <li key={ans}><h4>{this.htmlDecode(ans)}</h4></li>
               )
             })
           }
