@@ -30,6 +30,7 @@ export default App;
 ```
 
 ## Props
+Please see [OpenTriviaAPI wrapper](https://github.com/sbardian/openTriviaAPI "OpenTriviaAPI wrapper") for specifics on props and their options.
 ```
 <OpenTrivia
     amount={10}
