@@ -1,7 +1,7 @@
 # opentrivia-react
 React component for openTriviaAPI
 
-[![Build Status](https://travis-ci.org/sbardian/opentrivia-react.svg?branch=master)](https://travis-ci.org/sbardian/opentrivia-react) [![Coverage Status](https://coveralls.io/repos/github/sbardian/opentrivia-react/badge.svg?branch=dev)](https://coveralls.io/github/sbardian/opentrivia-react?branch=dev)
+[![Build Status](https://travis-ci.org/sbardian/opentrivia-react.svg?branch=dev)](https://travis-ci.org/sbardian/opentrivia-react) [![Coverage Status](https://coveralls.io/repos/github/sbardian/opentrivia-react/badge.svg?branch=dev)](https://coveralls.io/github/sbardian/opentrivia-react?branch=dev)
 
 ## Description
 This react component makes use of [OpenTriviaAPI wrapper](https://github.com/sbardian/openTriviaAPI "OpenTriviaAPI wrapper") to query [OpenTrivia API](https://www.opentdb.com "Open Trivia API").
