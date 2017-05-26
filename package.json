@@ -43,6 +43,7 @@
     "mocha": "^3.4.2",
     "nyc": "^10.3.2",
     "react": "^15.5.4",
+    "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.5.4",
     "travis-ci": "^2.1.1"
   },
