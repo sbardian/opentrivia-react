@@ -83,7 +83,6 @@ export default class OpenTrivia extends React.Component {
   }
 }
 
-// TODO: API only takes between 1-50 for amount, need to have a limit. 
 OpenTrivia.propTypes = {
   amount: PropTypes.number,
   category: PropTypes.number,
