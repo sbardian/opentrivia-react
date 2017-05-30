@@ -51,6 +51,8 @@
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "opentriviaapi": "0.0.8",
     "prop-types": "^15.5.10",
-    "react-card-flip": "0.0.4"
+    "react-addons-css-transition-group": "^15.5.2",
+    "react-card-flip": "0.0.4",
+    "react-transition-group": "^1.1.3"
   }
 }

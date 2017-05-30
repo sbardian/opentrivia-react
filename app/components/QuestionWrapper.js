@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import ReactCardFlip from 'react-card-flip';
 import styles from '../../styles/styles';
 import Choices from './Choices';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 export default class QuestionWrapper extends React.Component {
   constructor (props) {
@@ -31,27 +32,31 @@ export default class QuestionWrapper extends React.Component {
 
   render () {
     return (
-        <div style={styles.example}>
-          {/* TODO: remove br's after testing */}
-          <br/><br />
-          <ReactCardFlip isFlipped={this.state.isFlipped}>
-            <div key="front" style={styles.card}>
-              <h3>{this.props.question.category}</h3>
-              <h3>{this.htmlDecode(this.props.question.question)}</h3>
-              <Choices
-                  correct_answer={this.props.question.correct_answer}
-                  incorrect_answers={this.props.question.incorrect_answers} >
-              </Choices>
-              <button onClick={this.handleClick}>Answer</button>
-            </div>
+        <CSSTransitionGroup transitionName = "example"
+                                 transitionAppear = {true} transitionAppearTimeout = {500}
+                                 transitionEnter = {false} transitionLeave = {false}>
+          <div style={styles.example}>
+            {/* TODO: remove br's after testing */}
+            <br/><br />
+            <ReactCardFlip isFlipped={this.state.isFlipped}>
+              <div key="front" style={styles.card}>
+                <h3>{this.props.question.category}</h3>
+                <h3>{this.htmlDecode(this.props.question.question)}</h3>
+                <Choices
+                    correct_answer={this.props.question.correct_answer}
+                    incorrect_answers={this.props.question.incorrect_answers} >
+                </Choices>
+                <button onClick={this.handleClick}>Answer</button>
+              </div>
 
-            <div key="back" style={styles.card}>
-              <h3>Correct Answer:</h3>
-              <h3>{this.props.question.correct_answer}</h3>
-              <button onClick={this.handleClick}>Back</button>
-            </div>
-          </ReactCardFlip>
-        </div>
+              <div key="back" style={styles.card}>
+                <h3>Correct Answer:</h3>
+                <h3>{this.props.question.correct_answer}</h3>
+                <button onClick={this.handleClick}>Back</button>
+              </div>
+            </ReactCardFlip>
+          </div>
+        </CSSTransitionGroup>
     )
   }
 }
