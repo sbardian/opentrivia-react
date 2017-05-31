@@ -6,6 +6,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import openTriviaAPI from 'opentriviaapi';
 import QuestionWrapper from './components/QuestionWrapper';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 export default class OpenTrivia extends React.Component {
   constructor(props) {
@@ -78,7 +79,14 @@ export default class OpenTrivia extends React.Component {
           <div>
             <button onClick={this.prevQuestion}>Prev</button>
           </div>
-          <QuestionWrapper question={this.state.results[this.state.index]}/>
+          <CSSTransitionGroup
+              transitionName = "cardAnimate"
+              transitionAppear = {true}
+              transitionLeave = {false}
+              transitionAppearTimeout={700}
+          >
+            <QuestionWrapper key={this.state.index} question={this.state.results[this.state.index]}/>
+          </CSSTransitionGroup>
         </div>
   }
 }

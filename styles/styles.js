@@ -3,7 +3,7 @@
  */
 
 var styles = {
-  example: {
+  cardStyle: {
     height: '100%',
     width: '400px',
     margin: '0 auto',

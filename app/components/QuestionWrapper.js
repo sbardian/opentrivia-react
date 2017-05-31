@@ -32,10 +32,7 @@ export default class QuestionWrapper extends React.Component {
 
   render () {
     return (
-        <CSSTransitionGroup transitionName = "example"
-                                 transitionAppear = {true} transitionAppearTimeout = {500}
-                                 transitionEnter = {false} transitionLeave = {false}>
-          <div style={styles.example}>
+          <div style={styles.cardStyle}>
             {/* TODO: remove br's after testing */}
             <br/><br />
             <ReactCardFlip isFlipped={this.state.isFlipped}>
@@ -56,7 +53,6 @@ export default class QuestionWrapper extends React.Component {
               </div>
             </ReactCardFlip>
           </div>
-        </CSSTransitionGroup>
     )
   }
 }
