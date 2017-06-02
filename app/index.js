@@ -82,8 +82,9 @@ export default class OpenTrivia extends React.Component {
           <CSSTransitionGroup
               transitionName = "cardAnimate"
               transitionAppear = {true}
-              transitionLeave = {false}
-              transitionAppearTimeout={700}
+              transitionLeave = {true}
+              transitionAppearTimeout={600}
+              transitionLeaveTimeout={600}
           >
             <QuestionWrapper key={this.state.index} question={this.state.results[this.state.index]}/>
           </CSSTransitionGroup>
