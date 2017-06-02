@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 import ReactCardFlip from 'react-card-flip';
 import styles from '../../styles/styles';
 import Choices from './Choices';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 export default class QuestionWrapper extends React.Component {
   constructor (props) {
@@ -33,23 +32,29 @@ export default class QuestionWrapper extends React.Component {
   render () {
     return (
           <div style={styles.cardStyle}>
-            {/* TODO: remove br's after testing */}
-            <br/><br />
             <ReactCardFlip isFlipped={this.state.isFlipped}>
-              <div key="front" style={styles.card}>
-                <h3>{this.props.question.category}</h3>
-                <h3>{this.htmlDecode(this.props.question.question)}</h3>
+              <div key="front" style={styles.cardFront}>
+                <div style={styles.cardFrontTop}>
+                  <h3>{this.props.question.category}</h3>
+                  <h4>{this.htmlDecode(this.props.question.question)}</h4>
+                </div>
                 <Choices
                     correct_answer={this.props.question.correct_answer}
                     incorrect_answers={this.props.question.incorrect_answers} >
                 </Choices>
-                <button onClick={this.handleClick}>Answer</button>
+                <div style={styles.btnContainer}>
+                  <button style={styles.frontBtn} onClick={this.handleClick}>Answer</button>
+                </div>
               </div>
 
-              <div key="back" style={styles.card}>
-                <h3>Correct Answer:</h3>
-                <h3>{this.props.question.correct_answer}</h3>
-                <button onClick={this.handleClick}>Back</button>
+              <div key="back" style={styles.cardBack}>
+                <div style={styles.cardBackTop}>
+                  <h3>Correct Answer:</h3>
+                </div>
+                <h4>{this.props.question.correct_answer}</h4>
+                <div style={styles.btnContainer}>
+                  <button style={styles.backBtn} onClick={this.handleClick}>Back</button>
+                </div>
               </div>
             </ReactCardFlip>
           </div>

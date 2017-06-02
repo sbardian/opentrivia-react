@@ -1,15 +1,10 @@
-/**
- * Recommended css for your card animation.  Include this in your project if card
- * transitions are desired.
- *
- */
 
+body {
+    background-color: #ce93d8;
+}
 .cardAnimate {
     position: fixed;
-    top: 0;
-    right: 2000px;
     transition: right 2s;
-    transition: bottom 2s;
 }
 
 .cardAnimate-appear {
@@ -18,7 +13,7 @@
 
 .cardAnimate-appear.cardAnimate-appear-active {
     transform: translate(0%);
-    transition: transform 600ms ease;
+    transition: transform 1000ms ease;
 }
 
 .cardAnimate-enter {
@@ -27,15 +22,14 @@
 
 .cardAnimate-enter.cardAnimate-enter-active {
     transform: translate(0%);
-    transition: transform 600ms ease;
+    transition: transform 1000ms ease;
 }
-
 
 .cardAnimate-leave {
     transition: left;
 }
 
 .cardAnimate-leave.cardAnimate-leave-active {
-    transform: translate(-500%) rotate(1480deg);
-    transition: transform 600ms ease;
+    transform: translate(-500%) rotate(720deg);
+    transition: transform 1000ms ease;
 }

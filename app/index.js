@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 import openTriviaAPI from 'opentriviaapi';
 import QuestionWrapper from './components/QuestionWrapper';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+import styles from '../styles/styles';
+import logo from '../images/opentdb.png';
 
 export default class OpenTrivia extends React.Component {
   constructor(props) {
@@ -70,25 +72,24 @@ export default class OpenTrivia extends React.Component {
 
   render() {
     return this.state.loading === true
-        ? <div><h1>Loading Question. . .</h1></div>
-        : <div>
-          <h4>{(this.state.index + 1)} / {this.props.amount}</h4>
-          <div>
-            <button onClick={this.nextQuestion}>Next</button>
+        ? <div style={styles.mainContainer}><h1>Loading Questions. . .</h1></div>
+        : <div style={styles.mainContainer}>
+            <img src={logo} height={100} />
+            <h4>Question: {(this.state.index + 1)} / {this.props.amount}</h4>
+          <div style={styles.controlBtnContainer}>
+            <button style={styles.controlBtn} onClick={this.prevQuestion}>Prev</button>
+            <button style={styles.controlBtn} onClick={this.nextQuestion}>Next</button>
           </div>
-          <div>
-            <button onClick={this.prevQuestion}>Prev</button>
+            <CSSTransitionGroup style={styles.cardHolder}
+                transitionName = "cardAnimate"
+                transitionAppear = {true}
+                transitionLeave = {true}
+                transitionAppearTimeout={1000}
+                transitionLeaveTimeout={1000}
+            >
+              <QuestionWrapper key={this.state.index} question={this.state.results[this.state.index]}/>
+            </CSSTransitionGroup>
           </div>
-          <CSSTransitionGroup
-              transitionName = "cardAnimate"
-              transitionAppear = {true}
-              transitionLeave = {true}
-              transitionAppearTimeout={600}
-              transitionLeaveTimeout={600}
-          >
-            <QuestionWrapper key={this.state.index} question={this.state.results[this.state.index]}/>
-          </CSSTransitionGroup>
-        </div>
   }
 }
 
