@@ -1,0 +1,35 @@
+
+body {
+    background-color: #ce93d8;
+}
+.cardAnimate {
+    position: fixed;
+    transition: right 2s;
+}
+
+.cardAnimate-appear {
+    transform: translate(500%);
+}
+
+.cardAnimate-appear.cardAnimate-appear-active {
+    transform: translate(0%);
+    transition: transform 1000ms ease;
+}
+
+.cardAnimate-enter {
+    transform: translate(500%);
+}
+
+.cardAnimate-enter.cardAnimate-enter-active {
+    transform: translate(0%);
+    transition: transform 1000ms ease;
+}
+
+.cardAnimate-leave {
+    transition: left;
+}
+
+.cardAnimate-leave.cardAnimate-leave-active {
+    transform: translate(-500%) rotate(720deg);
+    transition: transform 1000ms ease;
+}
