@@ -11,7 +11,7 @@ import QuestionWrapper from '../app/components/QuestionWrapper';
 describe('Testing QuestionsWrapper...', () => {
   it('Should render a div element', (done) => {
     const wrapper = shallow(<QuestionWrapper />);
-    expect(wrapper.find('div')).to.have.length(3);
+    expect(wrapper.find('div')).to.have.length(7);
     done();
   });
 });
