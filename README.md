@@ -39,6 +39,25 @@ Please see [OpenTriviaAPI wrapper](https://github.com/sbardian/openTriviaAPI "Op
     difficulty={'easy'}
     type={'multiple'}
     encode={'url3986'}
+    click={this.clickHanlder}
     />
 ```
+## Answer click handler
+```
+import React, { Component } from 'react';
+import OpenTrivia from 'opentrivia-react'
+    
+class App extends Component {
+  clickHandler (ans) {
+    console.log("Selected answer: ' + ans);
+  }
 
+  render() {
+    return (
+        <OpenTrivia amount={45} getToken={true} click={this.clickHanlder} />
+    );
+  }
+}
+
+export default App;
+```
