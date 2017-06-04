@@ -40,7 +40,8 @@ export default class QuestionWrapper extends React.Component {
                 </div>
                 <Choices
                     correct_answer={this.props.question.correct_answer}
-                    incorrect_answers={this.props.question.incorrect_answers} >
+                    incorrect_answers={this.props.question.incorrect_answers}
+                    click={this.props.click}>
                 </Choices>
                 <div style={styles.btnContainer}>
                   <button style={styles.frontBtn} onClick={this.handleClick}>Answer</button>
@@ -64,8 +65,10 @@ export default class QuestionWrapper extends React.Component {
 
 QuestionWrapper.propTypes = {
   question: PropTypes.object,
+  click: PropTypes.func,
 }
 
 QuestionWrapper.defaultProps = {
   question: {},
+  click: null,
 };

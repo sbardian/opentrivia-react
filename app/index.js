@@ -87,7 +87,7 @@ export default class OpenTrivia extends React.Component {
                 transitionAppearTimeout={1000}
                 transitionLeaveTimeout={1000}
             >
-              <QuestionWrapper key={this.state.index} question={this.state.results[this.state.index]}/>
+              <QuestionWrapper key={this.state.index} click={this.props.click} question={this.state.results[this.state.index]}/>
             </CSSTransitionGroup>
           </div>
   }
@@ -100,6 +100,7 @@ OpenTrivia.propTypes = {
   type: PropTypes.string,
   encode: PropTypes.string,
   getToken: PropTypes.bool,
+  click: PropTypes.func,
 };
 
 OpenTrivia.defaultProps = {
