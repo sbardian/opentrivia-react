@@ -92,6 +92,9 @@ var styles = {
   },
   image: {
     width: '250px',
+  },
+  answers: {
+    padding: '2px',
   }
 }
 
