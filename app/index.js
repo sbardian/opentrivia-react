@@ -26,7 +26,6 @@ export default class OpenTrivia extends React.Component {
 
   // Moves forward to the next question
   nextQuestion() {
-    console.log('NEXT');
     let i = this.state.index;
     if (i < (this.props.amount - 1)) {
       i++;
@@ -38,7 +37,6 @@ export default class OpenTrivia extends React.Component {
 
   // Moves backwards to the previous question
   prevQuestion() {
-    console.log('PREV');
     let i = this.state.index;
     if (i > 0) {
       i--;
