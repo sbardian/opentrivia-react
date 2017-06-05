@@ -59,7 +59,7 @@ export default class Choices extends React.Component {
             // TODO: Call to CHOICES passing correct and incorrect.
             answers.map((ans, i) => {
               return (
-                  <li id={i} onClick={this.clickHandler.bind(this, i)} key={ans}>
+                  <li style={styles.answers} className={"otAnswer"} id={"ot-answer-" + i} onClick={this.clickHandler.bind(this, i)} key={ans}>
                     <h4>{this.htmlDecode(ans)}</h4>
                   </li>
               )
