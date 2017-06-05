@@ -48,8 +48,8 @@ import React, { Component } from 'react';
 import OpenTrivia from 'opentrivia-react'
     
 class App extends Component {
-  clickHandler (ans) {
-    console.log("Selected answer: ' + ans);
+  clickHandler (index) {
+    console.log("Selected answer id or index: ' + index);
   }
 
   render() {

@@ -29,8 +29,11 @@ export default class Choices extends React.Component {
   // Combines the correct and incorrect answers into one array
   createAnswers () {
     let answers = [];
+    let i = 0;
     this.props.incorrect_answers.map((ans) => {
-      answers.push(ans);
+      //answers.push(ans);
+      answers[i] = ans;
+      i++;
     });
     answers.push(this.props.correct_answer);
     return answers = this.shuffle(answers);
@@ -54,9 +57,9 @@ export default class Choices extends React.Component {
         <ul style={styles.cardList}>
           {
             // TODO: Call to CHOICES passing correct and incorrect.
-            answers.map((ans) => {
+            answers.map((ans, i) => {
               return (
-                  <li onClick={this.clickHandler.bind(this, ans)} key={ans}>
+                  <li id={i} onClick={this.clickHandler.bind(this, i)} key={ans}>
                     <h4>{this.htmlDecode(ans)}</h4>
                   </li>
               )
