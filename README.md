@@ -48,8 +48,15 @@ import React, { Component } from 'react';
 import OpenTrivia from 'opentrivia-react'
     
 class App extends Component {
-  clickHandler (index) {
-    console.log("Selected answer id or index: ' + index);
+  clickHandler(i) {
+    let answer;
+    document.querySelectorAll('.otAnswer').forEach((el) => {
+      el.style.backgroundColor = 'transparent';
+      el.style.color = '#666';
+    })
+    answer = document.getElementById("ot-answer-" + i);
+    answer.style.backgroundColor = '#CCD9E3';
+    answer.style.color = 'white';
   }
 
   render() {
