@@ -45,11 +45,17 @@ Please see [OpenTriviaAPI wrapper](https://github.com/sbardian/openTriviaAPI "Op
 ## Answer click handler
 ```
 import React, { Component } from 'react';
+import './App.css';
 import OpenTrivia from 'opentrivia-react'
     
 class App extends Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+    }
+  }
     
-  clickHandler(i, ans, correctAnswer) {
+  answerSelectedClick(i, ans) {
     // Update the dom to show selected answer
     let answer;
     document.querySelectorAll('.otAnswer').forEach((el) => {
@@ -60,14 +66,23 @@ class App extends Component {
     answer.style.backgroundColor = '#CCD9E3';
     answer.style.color = 'white';
         
-    // Log current answer and correct answer
     console.log('Selected Answer = ', ans);
-    console.log('Correct Answer = ', correctAnswer);
+  }
+    
+  answerButtonClick (correctAns) {
+    console.log('Clicked answer button, correct answer =', correctAns);
   }
     
   render() {
     return (
-        <OpenTrivia amount={45} getToken={true} click={this.clickHanlder} />
+      <div className="App">
+        <OpenTrivia
+            amount={45}
+            getToken={true}
+            answerSelectedClicked={this.answerSelectedClick}
+            answerButtonClicked={this.answerButtonClick}
+        />
+      </div>
     );
   }
 }
