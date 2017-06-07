@@ -48,7 +48,9 @@ import React, { Component } from 'react';
 import OpenTrivia from 'opentrivia-react'
     
 class App extends Component {
-  clickHandler(i) {
+    
+  clickHandler(i, ans, correctAnswer) {
+    // Update the dom to show selected answer
     let answer;
     document.querySelectorAll('.otAnswer').forEach((el) => {
       el.style.backgroundColor = 'transparent';
@@ -57,8 +59,12 @@ class App extends Component {
     answer = document.getElementById("ot-answer-" + i);
     answer.style.backgroundColor = '#CCD9E3';
     answer.style.color = 'white';
+        
+    // Log current answer and correct answer
+    console.log('Selected Answer = ', ans);
+    console.log('Correct Answer = ', correctAnswer);
   }
-
+    
   render() {
     return (
         <OpenTrivia amount={45} getToken={true} click={this.clickHanlder} />
