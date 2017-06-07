@@ -21,6 +21,9 @@ export default class QuestionWrapper extends React.Component {
   handleClick (e) {
     e.preventDefault();
     this.setState({ isFlipped: !this.state.isFlipped });
+    if (this.props.answerButtonClicked) {
+      this.props.answerButtonClicked(this.props.question.correct_answer);
+    }
   }
 
   htmlDecode (input) {
@@ -42,7 +45,9 @@ export default class QuestionWrapper extends React.Component {
                 <Choices
                     correct_answer={this.props.question.correct_answer}
                     incorrect_answers={this.props.question.incorrect_answers}
-                    click={this.props.click}>
+                    answerSelectedClicked={this.props.answerSelectedClicked}
+                    answerButtonClicked={this.props.answerButtonClicked}
+                >
                 </Choices>
                 <div style={styles.btnContainer}>
                   <button style={styles.frontBtn} onClick={this.handleClick}>Answer</button>
@@ -66,10 +71,12 @@ export default class QuestionWrapper extends React.Component {
 
 QuestionWrapper.propTypes = {
   question: PropTypes.object,
-  click: PropTypes.func,
+  answerSelectedClicked: PropTypes.func,
+  answerButtonClicked: PropTypes.func,
 }
 
 QuestionWrapper.defaultProps = {
   question: {},
-  click: null,
+  answerSelectedClicked: null,
+  answerButtonClicked: null,
 };

@@ -44,9 +44,9 @@ export default class Choices extends React.Component {
     return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
   }
 
-  clickHandler (i, ans, correctAnser) {
-    this.props.click ?
-        this.props.click(i, ans, correctAnser) :
+  clickHandler (i, ans) {
+    this.props.answerSelectedClicked ?
+        this.props.answerSelectedClicked(i, ans) :
         console.log('Answer selected = ', ans);
   }
 
@@ -58,7 +58,15 @@ export default class Choices extends React.Component {
             // TODO: Call to CHOICES passing correct and incorrect.
             answers.map((ans, i) => {
               return (
-                  <li style={styles.answers} className={"otAnswer"} id={"ot-answer-" + i} onClick={this.clickHandler.bind(this, i, ans, this.props.correct_answer)} key={ans}>
+                  <li
+                      style={styles.answers}
+                      className={"otAnswer"}
+                      id={"ot-answer-" + i}
+                      onClick={
+                        this.clickHandler.bind(this, i, ans)
+                      }
+                      key={ans}
+                  >
                     <h4>{this.htmlDecode(ans)}</h4>
                   </li>
               )
@@ -72,11 +80,11 @@ export default class Choices extends React.Component {
 Choices.propTypes = {
   correct_answer: PropTypes.string,
   incorrect_answers: PropTypes.array,
-  click: PropTypes.func,
+  answerSelectedClicked: PropTypes.func,
 }
 
 Choices.defaultProps = {
   correct_answer: '',
   incorrect_answers: [],
-  click: null,
+  answerSelectedClicked: null,
 };
