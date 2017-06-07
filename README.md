@@ -6,6 +6,7 @@ React component for openTriviaAPI
 ## Description
 This react component makes use of [OpenTriviaAPI wrapper](https://github.com/sbardian/openTriviaAPI "OpenTriviaAPI wrapper") to query [OpenTrivia API](https://www.opentdb.com "Open Trivia API").
 
+[Demo](https://sbardian.github.io/opentrivia-react/ "Demo")
 
 ## Install
 
