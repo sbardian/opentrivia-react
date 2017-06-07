@@ -30,6 +30,7 @@ export default class QuestionWrapper extends React.Component {
   }
 
   render () {
+    // TODO: pass click hanlder on answer button click...
     return (
           <div style={styles.cardStyle}>
             <ReactCardFlip isFlipped={this.state.isFlipped}>
