@@ -14,5 +14,5 @@
       "extends": "monorepo:react",
       "groupName": null
     }
-  ],
+  ]
 }
