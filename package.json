@@ -52,7 +52,7 @@
     "opentriviaapi": "0.0.11",
     "prop-types": "^15.5.10",
     "react-addons-css-transition-group": "^15.5.2",
-    "react-card-flip": "0.0.4",
+    "react-card-flip": "0.2.1",
     "react-transition-group": "^1.1.3"
   }
 }
