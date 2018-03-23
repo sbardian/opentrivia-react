@@ -49,7 +49,7 @@
   },
   "dependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "opentriviaapi": "0.0.12",
+    "opentriviaapi": "0.1.0",
     "prop-types": "^15.5.10",
     "react-addons-css-transition-group": "^15.5.2",
     "react-card-flip": "0.2.1",
