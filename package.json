@@ -41,7 +41,7 @@
     "eslint-plugin-react": "7.8.2",
     "jsdom": "11.10.0",
     "mocha": "3.5.3",
-    "nyc": "10.3.2",
+    "nyc": "11.8.0",
     "react": "15.6.2",
     "react-addons-test-utils": "15.6.2",
     "react-dom": "15.6.2",
