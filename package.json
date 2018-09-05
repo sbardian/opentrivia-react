@@ -33,7 +33,7 @@
     "babel-preset-react": "6.24.1",
     "chai": "3.5.0",
     "coveralls": "2.13.3",
-    "enzyme": "2.9.1",
+    "enzyme": "3.6.0",
     "eslint": "3.19.0",
     "eslint-config-airbnb": "15.1.0",
     "eslint-plugin-import": "2.14.0",
