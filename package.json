@@ -42,7 +42,7 @@
     "jsdom": "12.2.0",
     "mocha": "3.5.3",
     "nyc": "13.0.1",
-    "react": "15.6.2",
+    "react": "16.5.2",
     "react-addons-test-utils": "15.6.2",
     "react-dom": "15.6.2",
     "travis-ci": "2.2.0"
