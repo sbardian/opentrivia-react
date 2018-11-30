@@ -1,9 +1,12 @@
 # opentrivia-react
+
 React component for openTriviaAPI
 
+![Project frozen](https://img.shields.io/badge/status-frozen-blue.png) ![Project unmaintained](https://img.shields.io/badge/project-unmaintained-red.svg)
 [![Build Status](https://travis-ci.org/sbardian/opentrivia-react.svg?branch=dev)](https://travis-ci.org/sbardian/opentrivia-react) [![Coverage Status](https://coveralls.io/repos/github/sbardian/opentrivia-react/badge.svg?branch=dev)](https://coveralls.io/github/sbardian/opentrivia-react?branch=dev)
 
 ## Description
+
 This react component makes use of [OpenTriviaAPI wrapper](https://github.com/sbardian/openTriviaAPI "OpenTriviaAPI wrapper") to query [OpenTrivia API](https://www.opentdb.com "Open Trivia API").
 
 [Demo](https://sbardian.github.io/opentrivia-react/ "Demo")
@@ -15,6 +18,7 @@ npm i opentrivia-react -S
 ```
 
 ## Usage
+
 ```
 import React, { Component } from 'react';
 import OpenTrivia from 'opentrivia-react'
@@ -31,7 +35,9 @@ export default App;
 ```
 
 ## Props
+
 Please see [OpenTriviaAPI wrapper](https://github.com/sbardian/openTriviaAPI "OpenTriviaAPI wrapper") for specifics on props and their options.
+
 ```
 <OpenTrivia
     amount={10}
@@ -43,19 +49,21 @@ Please see [OpenTriviaAPI wrapper](https://github.com/sbardian/openTriviaAPI "Op
     click={this.clickHanlder}
     />
 ```
+
 ## Answer click handler
+
 ```
 import React, { Component } from 'react';
 import './App.css';
 import OpenTrivia from 'opentrivia-react'
-    
+
 class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
     }
   }
-    
+
   answerSelectedClick(i, ans) {
     // Update the dom to show selected answer
     let answer;
@@ -66,14 +74,14 @@ class App extends Component {
     answer = document.getElementById("ot-answer-" + i);
     answer.style.backgroundColor = '#CCD9E3';
     answer.style.color = 'white';
-        
+
     console.log('Selected Answer = ', ans);
   }
-    
+
   answerButtonClick (correctAns) {
     console.log('Clicked answer button, correct answer =', correctAns);
   }
-    
+
   render() {
     return (
       <div className="App">
